@@ -1,0 +1,24 @@
+version: 1
+send_anonymous_usage_stats: false
+project_id: 4f650ad1-30ec-4d02-b763-6b4ef3509b9e
+plugins:
+  extractors:
+  - name: tap-rest-api-msdk
+    namespace: tap_rest_api_msdk
+    pip_url: tap-rest-api-msdk
+    executable: tap-rest-api-msdk
+    capabilities:
+    - state
+    - catalog
+    - discover
+    settings:
+    - name: name
+    - name: api_url
+    - name: path
+    - name: params
+    - name: headers
+    - name: records_path
+    - name: primary_keys
+    - name: replication_key
+    - name: except_keys
+    - name: num_inference_records
