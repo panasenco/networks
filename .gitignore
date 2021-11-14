@@ -1,4 +1,4 @@
-networks-venv/
+*venv/
 .meltano/
 .env
 **/*.log

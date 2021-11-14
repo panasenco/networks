@@ -6,7 +6,22 @@ Infrastructure for analyzing social and other networks:
 3. Transform to nodes and edges tables using dbt (Meltano)
 4. Analyze in Gephi via database import from PostgreSQL
 
-## OpenStack
+## ELT
+
+```
+python -m venv tap-rest-api-venv
+.\tap-rest-api-venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install tap-rest-api
+python -m venv target-csv-venv
+.\target-csv-venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install target-csv
+```
+
+## Server Setup
+
+### OpenStack
 I use a cloud provider that uses OpenStack. These are the commands I used to create and configure the database server:
 
 ```
@@ -29,7 +44,7 @@ I also had to go to my modem settings and enable an IPv6 address to be able to c
 
 After all that, I could connect to the new VM via ssh.
 
-## Setting up PostgreSQL on Debian 11
+### Setting up PostgreSQL on Debian 11
 
 First ssh into the server via `ssh debian@<IP address>`, then:
 
