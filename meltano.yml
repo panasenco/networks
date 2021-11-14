@@ -62,5 +62,13 @@ plugins:
       kind: string
     - name: record_level
       kind: string
+    config:
+      url: https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={start_datetime}&endtime={end_datetime}&minmagnitude={min_magnitude}&limit={items_per_page}&offset={current_offset}&eventtype=earthquake&orderby=time-asc
+      record_list_level: features[*]
+      timestamp_key: properties.time
+      items_per_page: 100
+      offset_start: 1
+      auth_method: no_auth
+      min_magnitude: 1
   loaders:
   - name: target-csv
