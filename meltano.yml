@@ -3,22 +3,64 @@ send_anonymous_usage_stats: false
 project_id: 4f650ad1-30ec-4d02-b763-6b4ef3509b9e
 plugins:
   extractors:
-  - name: tap-rest-api-msdk
-    namespace: tap_rest_api_msdk
-    pip_url: tap-rest-api-msdk
-    executable: tap-rest-api-msdk
+  - name: tap-rest-api
+    namespace: tap_rest_api
+    pip_url: tap-rest-api
+    executable: tap-rest-api
     capabilities:
     - state
     - catalog
     - discover
     settings:
-    - name: name
-    - name: api_url
-    - name: path
-    - name: params
-    - name: headers
-    - name: records_path
-    - name: primary_keys
-    - name: replication_key
-    - name: except_keys
-    - name: num_inference_records
+    - name: streams
+      kind: string
+    - name: schema_dir
+      kind: string
+    - name: catalog_dir
+      kind: string
+    - name: url
+      kind: string
+    - name: auth_method
+      kind: string
+    - name: http_headers
+      kind: string
+    - name: username
+      kind: string
+    - name: password
+      kind: string
+    - name: offest_start
+      kind: integer
+    - name: page_start
+      kind: integer
+    - name: timestamp_key
+      kind: string
+    - name: start_timestamp
+      kind: integer
+    - name: end_timestamp
+      kind: integer
+    - name: datetime_key
+      kind: string
+    - name: start_datetime
+      kind: date_iso8601
+    - name: end_datetime
+      kind: date_iso8601
+    - name: index_key
+      kind: string
+    - name: start_index
+      kind: integer
+    - name: end_index
+      kind: integer
+    - name: items_per_page
+      kind: integer
+    - name: assume_sorted
+      kind: boolean
+    - name: max_page
+      kind: integer
+    - name: filter_by_schema
+      kind: boolean
+    - name: record_list_level
+      kind: string
+    - name: record_level
+      kind: string
+  loaders:
+  - name: target-csv
