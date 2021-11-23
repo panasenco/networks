@@ -1,3 +1,4 @@
 networks-venv/
+target/
 **/*.log
 **/*secret*
