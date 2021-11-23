@@ -1,2 +1,1 @@
 python-openstackclient==5.7.0
-meltano==1.87.1

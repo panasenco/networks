@@ -1,5 +1,3 @@
-*venv/
-.meltano/
-.env
+networks-venv/
 **/*.log
 **/*secret*
